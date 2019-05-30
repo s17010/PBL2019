@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @post.problem %>
+</p>
+
+<p>
+	<strong>Image:</strong>
+	<%= image_tag @post.img.url %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @post.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @post.longitude %>
+</p>
+
+
+<!--<p>-->
+<!--  <strong>Display:</strong>-->
+<!--  <%= @post.display %>-->
+<!--</p>-->
+
+<!--<%= link_to 'Edit', edit_post_path(@post) %> |-->
+<%= link_to '一覧', "/catalog" %>

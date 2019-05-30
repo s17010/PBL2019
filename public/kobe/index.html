@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+
+<body>
+<div id="container">
+	<header>
+		<h1 id="logo">神戸市民の声</h1>
+	</header>
+	
+	<nav id="menubar">
+	<form enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qYuLLjKDncRsXA3y4gZf+3s7WgzO3bbvnl+DgbW5M+KDBD7EvvKK7aJGZvctH9FnLwXWkD+jKq/a+JgQq1vxLw==" />
+		<p>お名前：<br>
+		<input type="text" name="post[name]"></p>
+<!--		<p>メールアドレス：<br>-->
+<!--		<input type="text" name="mail"></p>-->
+		<p>写真</p>
+		<div class="image">
+		<input type="file" id="target" accept=image/*" name="post[img]">
+		</div>
+		<img id="myImage" width="300" height="240">
+		<p>お問合せ内容：<br>
+		<textarea name="post[problem]" cols="30" rows="5"></textarea></p>
+		<p>位置情報</p>
+		<button type="button" onclick="getPosition();">位置情報を取得する</button>
+		<div id="ido">緯度</div>
+		<input type="text" id="position" accept="getPosition" name="post[latitude]">
+		<div id="keido">経度</div>
+		<input type="text" id="position2" accept="getPosition" name="post[longitude]">
+		<div id="latitude"></div>
+		<div id="longitude"></div>
+		<input type="hidden" value="false" name="post[display]">
+		<input id="sousin" type="submit" value="送信">
+	</form>
+		<script src="js/openclose.js"></script>
+</div>
+<footer>
+<small>Copyright&copy; <a href="index.html">SIMPLE SITE</a> All Rights Reserved.</small>
+<span class="pr">《<a href="http://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<% if @error_message %>
+	<div class="form-error">
+		<%= @error_message %>
+	</div>
+<% end %>
+
+<%= form_tag("/login") do %>
+	<p>User</p>
+	<input type="text" name="name">
+	<p>PassWord</p>
+	<input type="password" name="password">
+	<input type="submit" value="login">
+<% end %>
+
+

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+<link rel="stylesheet" href="kobe/css/style.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<div id="container">
+<h1>投稿一覧</h1>
+<%= link_to '新規投稿', '/kobe/index.html' %>
+<table>
+	<thead>
+		<tr>
+			<th>お名前</th>
+			<th>問題点</th>
+			<th>地図(リンク)</th>
+			<th>画像</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @posts.each do |post| %>
+			<tr>
+				<td><%= post.name %></td>
+				<td><%= post.problem %></td>
+
+<!--				<td><%= post.latitude %></td>-->
+<!--				<td><%= post.longitude %></td>-->
+				<td><%= link_to '場所', 'https://maps.google.co.jp/maps?q=loc:' + (post.latitude).to_s + "," + (post.longitude).to_s, target: "_blank" %></td>
+				<td><%= image_tag(post.img.url, :size => "300*300") %></td>
+				<td><%= link_to 'Show', post %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+<br>
+
+<footer>
+<small>Copyright&copy; <a href="index.html">SIMPLE SITE</a> All Rights Reserved.</small>
+<span class="pr">《<a href="http://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+</footer>

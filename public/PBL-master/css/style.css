@@ -1,0 +1,42 @@
+.main {
+background-color: blue;
+margin 0px;
+padding 0px;
+}
+
+#cont {
+    width: 100%;
+    font-size: 75px;
+    text-align: center;
+    color: white;
+}
+
+body {
+margin: 0px;
+padding: 0px;
+width: 100%;
+height: auto;
+}
+
+.title {
+text-align: center;
+color: blue;
+font-size: 55px;
+font-family: sans-serif;
+}
+
+/*.name-field {*/
+/*font-size: 25px;*/
+/*}*/
+
+.comment {
+text-align: center;
+}
+
+.image {
+text-align: center;
+}
+
+input {
+text-align: center;
+}

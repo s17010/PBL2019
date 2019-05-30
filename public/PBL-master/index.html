@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
+		<title>KOBE</title>
+		</head>
+		<meta name="viewport" content="width=device-width">
+		<body>
+			<div class="main">
+				<div id="cont">神戸市民の声</div>
+			</div>
+			
+			
+			
+			
+			<form enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qYuLLjKDncRsXA3y4gZf+3s7WgzO3bbvnl+DgbW5M+KDBD7EvvKK7aJGZvctH9FnLwXWkD+jKq/a+JgQq1vxLw==" />
+
+				<div class="title">
+					<p>お名前</p>
+				</div>
+				<div class="field">
+					<input type="text" name="post[name]">
+				</div>
+				<div class="title">
+					<p>問題箇所の内容</p>
+				</div>
+				<input type="comment" comment="comment"	class="field" cols="50" rows="14" name="post[problem]">
+					
+				<div class="title"><p>写真選択</p></div>
+					<div class="image">
+						<label for="book_img">Img</label>
+						<input id="post_img" type="file" name="post[img]" class="field">
+					</div>
+					
+<!--					<img id="myImage" width="300" height="240">-->
+
+					<div class="title"><p>位置情報</p></div>
+						<div class="field">
+							<button type="button" onclick="getPosition();">位置情報を取得する</button>
+							<input type="text" id="latitude" accept="getPosition" name="post[latitude]">
+							<input type="text" id="longitude" accept="getPosition" name="post[longitude]">
+							<input type="hidden" value="false" name="post[display]">
+						</div>
+					<p><input type="submit" value="送信する" id="button1" class="field"></p>
+</form>
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+<!--				<form action="/posts#create" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5NkwpNif0/P4D51o/gOXm5Fm8/amcfRQhDX6SS97lMrTYrfXZ2YFyArZOvBlakit3mWFOUNDbT4r3ikQor7xrw==" />-->
+
+<!--				<div class="title"><p>お名前</p></div>-->
+<!--					<input type="text" name="post[name]" class="name-field">-->
+<!--					<div class="title"><p>問題箇所の内容</p></div>-->
+<!--				<input type="comment" comment="comment"	class="comment-field" cols="50" rows="14" name="post[problem]">-->
+<!--					-->
+<!--					<p>写真選択</p>-->
+<!--					<div class="image">-->
+<!--						<label for="book_img">Img</label>-->
+<!--						<input id="post_img" type="file" name="post[img]" />-->
+<!--					</div>-->
+<!--					-->
+<!--<!--					<img id="myImage" width="300" height="240">-->
+
+<!--					<p>位置情報</p>-->
+<!--					<button type="button" onclick="getPosition();">位置情報を取得する</button>-->
+<!--					<input type="text" id="latitude" accept="getPosition" name="post[latitude]">-->
+<!--					<input type="text" id="longitude" accept="getPosition" name="post[longitude]">-->
+<!--					<input type="hidden" value="false" name="post[display]">-->
+<!--					<p><input type="submit" value="送信する" id="button1"></p>-->
+<!--				</form>-->
+
+					<script>
+		// 現在地取得処理
+		function getPosition() {
+			// 現在地を取得
+			navigator.geolocation.getCurrentPosition(
+				// 取得成功した場合
+				function(position) {
+						//document.getElementById("latitude").innerHTML = position.coords.latitude;
+						//document.getElementById("longitude").innerHTML = position.coords.longitude;
+						document.getElementById("latitude").value = position.coords.latitude;
+						document.getElementById("longitude").value = position.coords.longitude;
+				},
+				// 取得失敗した場合
+				function(error) {
+					switch(error.code) {
+						case 1: //PERMISSION_DENIED
+							alert("位置情報の利用が許可されていません");
+							break;
+						case 2: //POSITION_UNAVAILABLE
+							alert("現在位置が取得できませんでした");
+							break;
+						case 3: //TIMEOUT
+							alert("タイムアウトになりました");
+							break;
+						default:
+							alert("その他のエラー(エラーコード:"+error.code+")");
+							break;
+					}
+				}
+			);
+		}
+	</script>
+					</body>
+						</html>
