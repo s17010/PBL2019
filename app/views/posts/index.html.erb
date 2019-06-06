@@ -23,8 +23,8 @@
         <td><%= post.longitude %></td>
         <td><%= post.display %></td>
         <td><%= image_tag post.img.url , :width => '320' %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', '/posts/' + (post.id).to_s + '/edit', method: :get%></td>
+        <td><%= link_to 'Destroy', '/posts/' + (post.id).to_s , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,5 +32,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %> | <%= link_to 'logout', '/logout', {method: "post"}%>
-<p>localhost:3000/PBL-master</p>
+<%= link_to 'logout', '/logout', {method: "post"}%>

@@ -18,32 +18,32 @@
 <body>
 <div id="container">
 	<header>
-		<h1 id="logo">神戸市民の声</h1>
+		<a href="/"><h1 id="logo">神戸市民の声</h1></a>
 	</header>
 	
 	<nav id="menubar">
-	<form enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qYuLLjKDncRsXA3y4gZf+3s7WgzO3bbvnl+DgbW5M+KDBD7EvvKK7aJGZvctH9FnLwXWkD+jKq/a+JgQq1vxLw==" />
+	<form enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post" name="inputform"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qYuLLjKDncRsXA3y4gZf+3s7WgzO3bbvnl+DgbW5M+KDBD7EvvKK7aJGZvctH9FnLwXWkD+jKq/a+JgQq1vxLw==" />
 		<p>お名前：<br>
-		<input type="text" name="post[name]"></p>
+		<input type="text" name="post[name]" required="required"></p>
 <!--		<p>メールアドレス：<br>-->
 <!--		<input type="text" name="mail"></p>-->
 		<p>写真</p>
 		<div class="image">
-		<input type="file" id="target" accept=image/*" name="post[img]">
+		<input type="file" id="target" accept=image/*" name="post[img]" required="required">
 		</div>
 		<img id="myImage" width="300" height="240">
 		<p>お問合せ内容：<br>
-		<textarea name="post[problem]" cols="30" rows="5"></textarea></p>
+		<textarea name="post[problem]" cols="30" rows="5" required="required"></textarea></p>
 		<p>位置情報</p>
 		<button type="button" onclick="getPosition();">位置情報を取得する</button>
 		<div id="ido">緯度</div>
-		<input type="text" id="position" accept="getPosition" name="post[latitude]">
+		<input type="text" id="position" accept="getPosition" name="post[latitude]" required="required">
 		<div id="keido">経度</div>
-		<input type="text" id="position2" accept="getPosition" name="post[longitude]">
+		<input type="text" id="position2" accept="getPosition" name="post[longitude]" required="required">
 		<div id="latitude"></div>
 		<div id="longitude"></div>
 		<input type="hidden" value="false" name="post[display]">
-		<input id="sousin" type="submit" value="送信">
+		<input id="sousin" value="送信" type="submit" onclick="return checkForm();">
 	</form>
 		<script src="js/openclose.js"></script>
 </div>

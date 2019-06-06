@@ -44,3 +44,14 @@ target.addEventListener('change', function (e) {
 function sousin() {
   document.Main.submit();
 }
+
+function checkForm(){
+	if(document.inputform.post[name] == "" || document.inputform.post[problem] == "" || document.inputform.post[img] == "" || document.inputform.post[latitude] == "" || document.inputform.post[longitude] == ""){
+		alert("全項目入力してください")
+		return false;
+	}
+	else{
+		return true;
+		document.inputform.submit();
+	}
+}

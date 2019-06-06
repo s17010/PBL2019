@@ -1,0 +1,48 @@
+<%= form_with model: post, local: true do |form| %>
+		<% if post.errors.any? %>
+				<div id="error_explanation">
+						<h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+						<ul>
+						<% post.errors.full_messages.each do |message| %>
+								<li><%= message %></li>
+						<% end %>
+						</ul>
+				</div>
+		<% end %>
+
+		<div class="field">
+				<%= form.label :name %>
+				<%= form.text_field :name %>
+		</div>
+
+		<div class="field">
+				<%= form.label :problem %>
+				<%= form.text_field :problem %>
+		</div>
+
+		<div class="field">
+				<%= form.label :latitude %>
+				<%= form.text_field :latitude %>
+		</div>
+
+		<div class="field">
+				<%= form.label :longitude %>
+				<%= form.text_field :longitude %>
+		</div>
+
+
+		<div class="field">
+				<% if @post.display %>
+						display:<input name="post[display]" type="hidden" value="false" checked="checked" /><input name="post[display]" type="checkbox" value="true" checked="checked" />
+				<% else %>
+						display:<input name="post[display]" type="hidden" value="false" /><input name="post[display]" type="checkbox" value="true" />
+				<% end %>
+		</div>
+
+		<%= image_tag @post.img.url %>
+
+		<div class="actions">
+				<%= form.submit %>
+		</div>
+<% end %>

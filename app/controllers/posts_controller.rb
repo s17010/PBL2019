@@ -34,10 +34,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to '/', notice: 'Post was successfully created.' }
 #        format.json { render :show, status: :created, location: @post }
       else
-        format.html { render :new }
+      	format.html { redirect_to '/kobe/index.html' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to '/posts/index', notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,7 +80,7 @@ class PostsController < ApplicationController
 		if @user.authenticate(params[:password])
 			session[:user_id] = @user.id
 			flash[:notice] = "ログインしました"
-			redirect_to("/posts")
+			redirect_to("/posts/index")
 		else
 			@error_message = "ログイン間違い"
 			render("/login_form")
