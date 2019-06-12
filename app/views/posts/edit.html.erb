@@ -16,7 +16,7 @@
         <% end %>
         name:<input name="post[name]" value="<%= @post.name %>">
         <br>
-        problem:<input name="post[problem]" value="<%= @post.problem %>">
+        problem:<textarea name="post[problem]" value="<%= @post.problem %>" rows="5" cols="40" ><%= @post.problem %></textarea>
         <br>
         latitude:<input name="post[latitude]" value="<%= @post.latitude %>">
         <br>

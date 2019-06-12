@@ -18,7 +18,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.name %></td>
-        <td><%= post.problem %></td>
+        <td><%= simple_format(post.problem) %></td>
         <td><%= post.latitude %></td>
         <td><%= post.longitude %></td>
         <td><%= post.display %></td>

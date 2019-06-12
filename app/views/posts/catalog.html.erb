@@ -31,12 +31,12 @@
 		<% @posts.each do |post| %>
 			<tr>
 				<td><%= post.name %></td>
-				<td><%= post.problem %></td>
+				<td><%= simple_format(post.problem) %></td>
 
 <!--				<td><%= post.latitude %></td>-->
 <!--				<td><%= post.longitude %></td>-->
 				<td><%= link_to '場所', 'https://maps.google.co.jp/maps?q=loc:' + (post.latitude).to_s + "," + (post.longitude).to_s, target: "_blank" %></td>
-				<td><%= image_tag(post.img.url, :size => "300*300") %></td>
+				<td><%= image_tag(post.img.url, :size => "300x300") %></td>
 				<td><%= link_to 'Show', '/posts/' + (post.id).to_s %></td>
 			</tr>
 		<% end %>
