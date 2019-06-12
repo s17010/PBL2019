@@ -77,15 +77,18 @@ class PostsController < ApplicationController
 	
 	def login
 		@user = User.find_by(name: params[:name])
-		if @user.authenticate(params[:password])
-			session[:user_id] = @user.id
-			flash[:notice] = "ログインしました"
-			redirect_to("/posts/index")
-		else
-			@error_message = "ログイン間違い"
-			redirect_to("/login")
+		if @user
+			if @user.authenticate(params[:password])
+				session[:user_id] = @user.id
+				flash[:notice] = "ログインしました"
+				redirect_to("/posts/index")
+			else
+				@error_message = "ログイン間違い"
+				redirect_to("/login")
+			end
 		end
 	end
+
 	
 	def logout
 		session[:user_id] = nil
