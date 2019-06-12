@@ -23,10 +23,10 @@ body {
 h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;}
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}
-img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+/*img {border: none;max-width: 100%;height: auto;vertical-align: middle;}*/
 a:hover img {opacity: 0.6}
 table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
-iframe {width: 100%;}
+/*iframe {width: 100%;}*/
 
 /*h2見出しタグの設定
 ---------------------------------------------------------------------------*/
