@@ -83,7 +83,7 @@ class PostsController < ApplicationController
 			redirect_to("/posts/index")
 		else
 			@error_message = "ログイン間違い"
-			render("/login_form")
+			redirect_to("/login")
 		end
 	end
 	

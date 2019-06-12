@@ -5,4 +5,5 @@ class Post < ApplicationRecord
 	validates :longitude, {presence: true}
 	validates :latitude, {presence: true}
 	validates :img, {presence: true}
+	has_secure_password
 end
