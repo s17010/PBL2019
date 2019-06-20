@@ -29,7 +29,7 @@
 <!--		<input type="text" name="mail"></p>-->
 		<p>写真</p>
 		<div class="image">
-		<input type="file" id="target" accept=image/*" name="post[img]" required="required">
+		<input type="file" id="target" accept="image/*" name="post[img]" required="required">
 		</div>
 		<img id="myImage" width="300" height="240">
 		<p>お問合せ内容：<br>
@@ -37,9 +37,9 @@
 		<p>位置情報</p>
 		<button type="button" onclick="getPosition();">位置情報を取得する</button>
 		<div id="ido">緯度</div>
-		<input type="text" id="position" accept="getPosition" name="post[latitude]" required="required">
+		<input type="text" id="position" accept="getPosition" name="post[latitude]" required="required" pattern="\d{2}\.\d*" title="ボタンを押して位置情報を取得してください">
 		<div id="keido">経度</div>
-		<input type="text" id="position2" accept="getPosition" name="post[longitude]" required="required">
+		<input type="text" id="position2" accept="getPosition" name="post[longitude]" required="required" pattern="\d{3}\.\d*" title="ボタンを押して位置情報を取得してください">
 		<div id="latitude"></div>
 		<div id="longitude"></div>
 		<input type="hidden" value="false" name="post[display]">

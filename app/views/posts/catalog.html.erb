@@ -31,14 +31,14 @@
 		<% @posts.each do |post| %>
 			<tr>
 				<td><%= post.name %></td>
-				<td><%= simple_format(post.problem) %></td>
+				<td><%= simple_format(h(post.problem)) %></td>
 
 <!--				<td><%= post.latitude %></td>-->
 <!--				<td><%= post.longitude %></td>-->
 <!--				<td><%= link_to '場所', 'https://maps.google.co.jp/maps?q=loc:' + (post.latitude).to_s + "," + (post.longitude).to_s, target: "_blank" %></td>-->
 						<td><iframe src="<%= 'https://maps.google.co.jp/maps?&output=embed&q=' + (post.latitude).to_s + ',' + (post.longitude).to_s %>" height="100%" width="100%"></iframe></td>
-				<td><%= image_tag(post.img.url, :size => "300x300") %></td>
-				<td><%= link_to 'Show', '/posts/' + (post.id).to_s %></td>
+				<td><img src="<%= post.img.url %>" width="300"></td>
+<!--				<td><%= link_to 'Show', '/posts/' + (post.id).to_s %></td>-->
 			</tr>
 		<% end %>
 	</tbody>
